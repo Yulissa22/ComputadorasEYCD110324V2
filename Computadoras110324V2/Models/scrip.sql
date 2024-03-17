@@ -15,5 +15,5 @@ IdComputadoras INT NOT NULL,
 Procesador VARCHAR(50) NOT NULL,
 MemoriaRAMGB INT NOT NULL,
 AlmacenamientoGB INT NOT NULL,
-FOREIGN KEY (IdComputadoras) REFERENCES Computadoras (Id)
+FOREIGN KEY (IdComputadoras) REFERENCES Computadoras (Id) ON DELETE CASCADE 
 )

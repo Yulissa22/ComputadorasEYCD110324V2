@@ -1,0 +1,40 @@
+﻿@model Computadoras110324V2.Models.Computadora
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2 class="text-info">Eliminar</h2>
+
+<h4 class="text-danger">¿Estas seguro que quieres eliminar el registro?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaLlegada)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaLlegada)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+    </dl>
+    <div class="row row-cols-md-12">
+        @await Html.PartialAsync("_DetComponente", Model.Componente)
+    </div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-outline-danger" /> 
+        <a class="btn btn-outline-danger" asp-action="Index">Cancelar</a>
+    </form>
+</div>

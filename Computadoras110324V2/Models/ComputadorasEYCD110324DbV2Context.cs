@@ -41,7 +41,7 @@ namespace Computadoras110324V2.Models
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.IdComputadorasNavigation)
-                    .WithMany(p => p.Componentes)
+                    .WithMany(p => p.Componente)
                     .HasForeignKey(d => d.IdComputadoras)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Component__IdCom__398D8EEE");
